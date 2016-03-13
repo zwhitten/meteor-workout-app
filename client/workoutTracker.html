@@ -1,0 +1,27 @@
+<head>
+  <title>workoutTracker</title>
+</head>
+
+<body>
+  <h1>Track all your workouts with Meteor!</h1>
+  {{> loginButtons }}
+
+  <h2>Detailed Workout listing</h2>
+  {{> workoutList}}
+
+</body>
+
+
+<template name="workoutList">
+  <button id="sort_button" class='sort-direction'>Sort</button>
+  {{#if Template.subscriptionsReady}}
+    <ul>
+      {{#each workouts}}
+        <li>{{workoutAt}}</li>
+      {{/each}}
+    </ul>
+    {{else}}
+      loading workouts...
+  {{/if}}
+  <button id="button" class="show-more">Show More</button>
+</template>
